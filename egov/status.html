@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Status</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <link rel="stylesheet" href="status.css">  
+    <style>
+        .download-btn-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style> 
+</head>
+<body>
+    <div class="download-btn-container">
+        <button class="btn btn-primary" onclick="downloadPage()">
+            <i class="fas fa-download"></i> Download
+        </button>
+    </div>
+    <div class="container py-5">
+        <div class="status-container">
+            <div class="row">
+                <div class="col-md-6 status-info">
+                    <h3 class="status-header">Application Status</h3>
+                    <div class="error-message alert alert-danger d-none" id="errorMessage"></div>
+                    <div class="status-card">
+                        <i class="fas fa-fingerprint fa-2x mb-3 text-primary"></i>
+                        <h4>Status: <span id="statusText">Processing</span></h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <p class="mb-0 text-muted ptext">Estimated completion: 3-5 business days</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 applicant-details">
+                    <h3 class="status-header">Applicant Details</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-user detail-icon"></i>
+                            <strong>Full Name:</strong> <span id="fullName"></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-male detail-icon"></i>
+                            <strong>Father's Name:</strong> <span id="fatherName"></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-female detail-icon"></i>
+                            <strong>Mother's Name:</strong> <span id="motherName"></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-calendar-alt detail-icon"></i>
+                            <strong>Date of Birth (A.D.):</strong> <span id="dobAd"></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe detail-icon"></i>
+                            <strong>Nationality:</strong> <span id="nationality">Nepalese</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-passport detail-icon"></i>
+                            <strong>Passport Type:</strong> <span id="passportType"></span>
+                        </li>
+                        <li>
+                            <i class="fas fa-copy detail-icon"></i>
+                            <strong>Pages:</strong> <span id="passportPages"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="status.js"></script>
+    <script>
+        function downloadPage() {
+            const element = document.querySelector('.status-container');
+            const opt = {
+                margin:       10,
+                filename:     'application-status.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }
+    </script>
+</body>
+</html>

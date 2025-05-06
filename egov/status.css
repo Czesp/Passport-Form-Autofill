@@ -1,0 +1,120 @@
+
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.status-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    padding: 2.5rem;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(0,77,153,0.1);
+}
+
+.status-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.status-info {
+    border-right: 2px solid #004d99;
+    padding-right: 2rem;
+}
+
+.applicant-details li {
+    list-style: none;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.applicant-details li:hover {
+    background: #f8faff;
+    transform: translateX(10px);
+    border-radius: 8px;
+}
+
+.applicant-details li strong {
+    color: #2d3436;
+    min-width: 140px;
+    font-weight: 600;
+}
+
+.applicant-details li span {
+    color: #4a5568;
+}
+
+.status-header {
+    color: #004d99 !important;
+    border-left: 4px solid #004d99;
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+}
+
+.status-card {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f0fa 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #004d99;
+}
+
+#statusText {
+    color: #2a6faf;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.progress-bar {
+    height: 8px;
+    border-radius: 4px;
+    background: #e9ecef;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(90deg, #004d99 0%, #2a6faf 100%);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+.detail-icon {
+    color: #2a6faf;
+    font-size: 1.1rem;
+    min-width: 25px;
+}
+
+@media (max-width: 768px) {
+    .status-info {
+        border-right: none;
+        border-bottom: 2px solid #004d99;
+        padding-right: 0;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .applicant-details li {
+        padding: 0.8rem 0;
+    }
+}

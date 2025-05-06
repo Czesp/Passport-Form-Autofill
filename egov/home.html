@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Passport Department</title>
+</head>
+<body>
+<div class="container">
+        <header>
+            <div class="div1 mt-3">
+                <img src="images/Emblem_of_Nepal.svg.png" alt="Emblem_of_Nepal">
+                <div class="left">
+                    <p class="first">Government of Nepal</p>
+                    <strong>Ministry of Foreign Affairs</strong>
+                    <p class="last">Department of Passports</p>
+                </div>
+            </div>
+            <div class="div2">
+                <p class="right">
+                    The First NS/ISO 9001:2015<br>
+                    Certified Government Organization of Nepal
+                </p>
+                <img src="images/Department_of_passport_Nepal.gif" alt="flag of nepal"> 
+            </div>
+        </header>
+</div>
+<nav class="navbar mt-3">
+        <div class="container">
+            <ul class="nav-links p-0">
+                <li><a href="home.html">Home</a></li>
+                <li><a class="ps-5" href="about.html">About Us</a></li>
+                <li><a  class="ps-5" href="https://nepalpassport.gov.np/storage/b8yO8tUe7T3gT04FnGCjsM8OYzbB4R-metaUGFzc3BvcnRBY3QyMDc2LWNvbXByZXNzZWQucGRm-.pdf" target="_blank">Acts and Rules</a></li>
+                <li><a class="ps-5" href="services.html">Passport Form</a></li>   
+                <li><a class="ps-5" href="privacy.html">Privacy Policy</a></li>
+             </ul>
+    </div>
+</nav>
+<section>
+<div class="container-fluid">
+        <div class="row">
+            <div class="col-12 p-0">
+                <div id="carouselId" class="carousel slide carousel-fade mb-5" data-bs-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item crl1 active"  >
+                            <div class="cc1" id="content1">  
+                                <h3 class="">How Do I Apply for Passport?</h3>
+                                <p class="pt-2 pb-2">Applying for the first time? Renewing a passport?</p>
+                                <a href="services.html" target="_blank" class="text-decoration-none text-white"><button>Apply for e-Passport</button></a>
+                            </div>
+                        </div>
+                        <div class="carousel-item crl2" >
+                            <div class="cc2" id="content2">
+                                <h3 class="">Where to apply for ePassport</h3>
+                                <p class="pt-3">Urgent service available at</p>
+                                <p class="pt-3">Department of Passports, Tripureshwor, Kathmandu.</p> 
+                                <p class="pt-3 pb-3">Regular sevices from Districts and Diplomatic Missions</p> 
+                                <a href="https://nepalpassport.gov.np/storage/O0Jr9TsT2OcVQEXJrCwCB6MnujtyFG-metaRGlzdHJpY3QtTGlzdC5wZGY=-.pdf" target="_blank"><button class="me-3">District List</button></a>
+                                <a href="https://nepalpassport.gov.np/storage/8dlCB7o51bv7pyiNq5xO7Z9lPTUgqy-metaTWlzc2lvbiBMaXN0LnBkZg==-.pdf" target="_blank"><button>Mission List</button></a>                         
+                            </div>
+                        </div>
+                        
+                        <div class="carousel-item crl3" >
+                            <div class="cc3" id="content3">
+                                <h3 class="pb-2">e-Passport related information handbook</h3>
+                                <p class="pb-2">विद्युतीय राहदानी जानकारीमूलक पुस्तिका - २०७९</p>
+                                <a href="https://nepalpassport.gov.np/storage/JTqVizPNO1Vvh7VFffkMF9WZzZqqW0-metaZVBhc3Nwb3J0IEJyb2NodXJlLnBkZg==-.pdf" target="_blank"><button>View handbook</button></a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                        <button
+                        class="carousel-control-prev"
+                        type="button"
+                        data-bs-target="#carouselId"
+                        data-bs-slide="prev"
+                        >
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="next"
+                    >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+        </div>
+        
+    </div>
+</div>
+</div>
+</section>
+
+<div class="container">
+    <div class="row mt-5 mb-5">
+        <div class="col-6">
+            <div class="pass-checker">
+                <p id="top"><strong>Check Passport Status</strong></p>
+            </div>
+            <div class="ref-number">
+                <h4>Check Latest Passport Status</h4>
+                <label for="num">ENTER REFERENCE NUMBER</label><br>
+                <input type="text" class="form-control" id="referenceInput">
+                <button class="btn btn-danger mt-2" onclick="checkStatus()">Check Status</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="container3" id="accordion">
+                <h3 class="text-left mt-5 mb-3"> FAQs about Passport</h3>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button
+                                class="accordion-button ps-3"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne"
+                                aria-expanded="true"
+                                aria-controls="collapseOne"
+                            >
+                               <strong>How long does it take to get an ePassport from the Department?</strong>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseOne"
+                            class="accordion-collapse collapse show"
+                            aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample"
+                        >
+                            <div class="accordion-body ps-3">
+                                <p>It generally takes 2 to 3 working days after the enrollment. However, if the details of citizenship, National Identity Card, old passport, etc. are not verified or photograph as per ICAO criteria is not met, further investigation is required. Unfortunately, passports may not be available on time despite emergency service due to software upgrades or any other technical reasons. So, the Department kindly requests the applicants to book tickets or make necessary travel arrangements only after the passport is received.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button
+                                class="accordion-button ps-3"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo"
+                                aria-expanded="true"
+                                aria-controls="collapseTwo"
+                            >
+                               <strong> From where can we apply for regular ePassport services?</strong>
+                            </button>
+                        </h2>
+                        <div
+                            id="collapseTwo"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample"
+                        >
+                        <div class="accordion-body ps-3">
+                            <p>
+                                The regular service for ePassports is available from all the District Administration Offices in Nepal and all Nepali Diplomatic Missions abroad.
+                            </p>
+                        </div>
+                        
+                        </div>
+                        </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button
+                                class="accordion-button ps-3"
+                                type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree"
+                                aria-expanded="true"
+                                aria-controls="collapseThree"
+                            >
+                            <strong>How long does it take to get an electronic passport after live enrollment?</strong>
+                        </button>
+                        </h2>
+                        <div
+                            id="collapseThree"
+                            class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample"
+                        >
+                        <div class="accordion-body ps-3">
+                            <p>Passports will be available in all the three districts of Kathmandu Valley within a week. Passports will be available within 15 days on the Mahendra Highway outside Kathmandu and surrounding districts and districts with air facilities. After receiving the passport at the district administration offices, an SMS will be sent to the applicant's mobile to collect the passport.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                
+            </div>
+        
+        </div>
+        
+        </div>
+</div>
+
+<footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 w-50">
+                    <div class="row">
+                        <div class="col-3"></div>
+                        <div class="col-3">
+                            <img src="images/Emblem_of_Nepal.svg.png" alt="">
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    <h4><ion-icon name="business" class="pe-3"></ion-icon>Department of Passport Nepal</h4>
+                    <p><ion-icon name="pin" class="pe-3"></ion-icon>Tripureshwor, Kathmandu, Nepal</p>
+                    <p><ion-icon name="mail" class="pe-3"></ion-icon> Email: info@nepalpassport.gov.np</p>
+                    <p><ion-icon name="call" class="pe-3"></ion-icon>Phone: +977-1-5970330</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p> &copy; 2025 Department of Passport Nepal. All rights reserved.</p>
+        </div>
+</footer>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    function checkStatus() {
+        const ref = document.getElementById('referenceInput').value.trim();
+        if(ref) {
+            window.location.href = `status.html?ref=${encodeURIComponent(ref)}`;
+        } else {
+            alert("Please enter a reference number");
+        }
+    }
+</script>
+
+</body>
+</html>

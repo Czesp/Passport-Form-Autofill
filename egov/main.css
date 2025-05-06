@@ -1,0 +1,269 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+header img{
+    width: 120px;
+    height: 100px;
+    padding-right: 10px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.first{
+    margin-bottom: 0px;
+    color: brown;
+}
+.last{
+    margin-top: -5px;
+    font-size: 25px;
+    color: RGB(36, 96, 185);
+}
+.right{
+    color: grey;
+    text-align: right;
+}
+.div1{
+    display: flex;
+    align-items: center;
+}
+.div2{
+    display: flex;
+    padding-right: 40px;
+    align-items: center;
+}
+.div2 img{
+    padding-left: 20px;
+}
+.navbar{
+    background-color: RGB(36, 96, 185);
+    height: 50px;
+    margin-top: 10px;
+    
+}
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-top: 10px;
+}
+.nav-links a{
+    text-decoration: none;
+    color: white;
+}
+#top{
+    background-color: white;
+    width: fit-content;
+    color: #062E66;
+    font-weight: strong;
+    border-top: 2px solid #062E66;
+    padding: 10px 10px 20px 10px;
+    margin-top: 50px;
+    margin-bottom: -5px;
+    border-radius: 5%;
+}
+.ref-number{
+    font-size: 25px;
+    background-color: #062E66;
+    color: white;
+    width: fit-content;
+    padding: 1px 30px 20px 30px;
+    border: 10px solid white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.ref-number input{
+    width: 500px;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    
+}
+.ref-number button{
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px 5px 10px;
+    border-radius: 5%;
+    background-color: rgb(239, 81, 10);
+    font-size: 20px;
+    border: none;
+    color: white;
+}
+.ref-number h4{
+    padding-top: 20px;
+}
+.dropdown{
+    background-color: RGB(36, 96, 185);
+    
+}
+.dropdown .dropdown-menu{
+    background-color: lightgray;
+    color: black;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+}
+.carousel-item{
+    height: 600px; 
+    object-fit: fill; 
+}
+.crl2{
+    background-image: url('https://nepalpassport.gov.np/storage/exv9ajkSSPmWFVnpuD4VZaPDLEooep-metad2hlcmV0b2FwcGx5LnBuZw==-.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+.crl3 {
+    background-image: url('https://nepalpassport.gov.np/storage/R1f6w3w19tKYCUYOdt8UQnPrtsXPUt-metaZW1ydGRzIGJhbm5lci5wbmc=-.png'); /* Replace with your actual image path */
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+.crl1 {
+    background-image: url('https://nepalpassport.gov.np/storage/V2faT9YrWGZkJjRq93fAWKts9SEbFU-metac2YuanBn-.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+.carousel-indicators li::marker{
+    display: none;
+    content: "";
+}
+#content1{
+    background: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 30px;
+    border-radius: 5px;
+    width: 600px;
+    height: fit-content;
+    position: absolute;
+    font-size: 20px;
+    top: 40%;
+    left: 10%;
+}
+.cc1 button{
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px 5px 10px;
+    border-radius: 5%;
+    background-color: rgb(239, 81, 10);
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+#content2{
+    background: rgba(0, 0, 0, 0.3); 
+    color: white; 
+    padding: 30px;
+    border-radius: 5px;
+    width: 600px;
+    height: 350px;
+    position: absolute;
+    font-size: 20px;
+    top: 20%;
+    left: 10%;
+}
+#content3 button{
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px 5px 10px;
+    border-radius: 5%;
+    background-color: rgb(239, 81, 10);
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+#content3{
+    background: rgba(0, 0, 0, 0.3); 
+    color: white; 
+    padding: 30px;
+    border-radius: 5px;
+    width: 600px;
+    height: fit-content;
+    position: absolute;
+    font-size: 20px;
+    top: 40%;
+    left: 10%;
+}
+.cc2 button{
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px 5px 10px;
+    border-radius: 5%;
+    background-color: rgb(239, 81, 10);
+    font-size: 15px;
+    border: none;
+    color: white;
+}
+.carousel-control-prev {
+    width: 40px !important; 
+    height: 40px !important;
+    background-color:white!important;
+    cursor: pointer;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .1);
+}
+
+.carousel-control-next{
+    width: 40px !important; 
+    height: 40px !important;
+    background-color:white !important;
+    cursor: pointer;
+    box-shadow: 0 0 4px 1px rgba(0, 0, 0, .1);
+}
+
+.carousel-control-next{
+    translate: -720px 560px;
+}
+.carousel-control-prev{
+    translate: 719px 560px;
+}
+.carousel-control-prev-icon::before {
+    content: url('images/arrow-back-outline.svg');
+}
+
+.carousel-control-next-icon::before {
+    content: url('images/arrow-forward-outline.svg');
+}
+.footer {
+    background-color:#E5E5E5;
+    color:#333333;
+    padding: 20px 0;
+    margin-top: 80px;
+}
+.footer h4 {
+    margin-bottom: 15px;
+}
+
+.footer .bottom-bar {
+    text-align: center;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+.accordion-button:hover{
+    background-color: #EFEFEF;
+    box-shadow: none;
+}
+.accordion-body{
+    padding-left: 50px;
+}
+.accordion-button:not(.collapsed){
+    outline: none;
+    background-color: #E7F1FF !important;
+}
+.accordion-item .accordion-button{
+    box-shadow: none !important;
+    border: none !important;
+}
+.footer img{
+    width: 200px;
+    height: 150px;
+    padding-right: 10px;
+}
+.footer ion-icon{
+    height: 30px;
+    width: 50px;
+    margin-bottom: -7px;
+}

@@ -1,0 +1,86 @@
+:root {
+    --primary-color: #004d99;
+    --secondary-color: #e9f2fa;
+}
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 2rem auto;
+    overflow: hidden;
+}
+
+.form-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.section-header {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-left: 4px solid var(--primary-color);
+    margin: 2rem 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.section-header:hover {
+    transform: translateX(10px);
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0,77,153,0.25);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    padding: 7px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #003366;
+    transform: translateY(-2px);
+}
+
+.required:after {
+    content: "*";
+    color: #dc3545;
+    margin-left: 3px;
+}
+
+.file-upload {
+    border: 2px dashed #dee2e6;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.file-upload:hover {
+    border-color: var(--primary-color);
+    background: var(--secondary-color);
+}
+
+.fixed-field {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+.form-check-label{
+    margin-top:10px;
+    margin-left: 2px;
+}
+#nationality, #country{
+    opacity: 0.7;
+}

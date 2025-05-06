@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewal Application</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container py-5">
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Nepal Passport Application Form</h2>
+                <p class="mb-0">Government of Nepal, Department of Passport</p>
+            </div>
+            
+            <form id="passportForm" method="POST" action="renewal.php" class="p-4" enctype="multipart/form-data">
+                
+                <!-- NID Verification -->
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <label for="nid" class="form-label required">National Identity Number (NID)</label>
+                        <input type="text" class="form-control" id="nid" name="nid" required>
+                    </div>
+                    <div class="col-md-6 align-items-end d-flex w-50">
+                        <button type="button" class="btn btn-primary" onclick="fetchNIDDetails()">Verify NID</button>
+                    </div>
+                </div>
+                
+                <!-- Demographic Information -->
+                <div class="section-header">Demographic Information</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="lastname" class="form-label required">Last Name</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="firstname" class="form-label required">First Name</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label required">Gender</label><br>
+                        <div class="btn-group" role="group">
+                            <input type="radio" id="male" name="gender" value="Male" class="btn-check" required>
+                            <label class="btn btn-outline-primary" for="male">Male</label>
+                            
+                            <input type="radio" id="female" name="gender" value="Female" class="btn-check" required>
+                            <label class="btn btn-outline-primary" for="female">Female</label>
+                            
+                            <input type="radio" id="other" name="gender" value="Other" class="btn-check" required>
+                            <label class="btn btn-outline-primary" for="other">Other</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Date and Birth Info -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="dob_ad" class="form-label required">Date of Birth (A.D.)</label>
+                        <input type="date" class="form-control" id="dob_ad" name="dob_ad">
+                    </div>
+                    <div class="col-md-4">
+                        <label class="form-label required">Is this exact Date of Birth ?</label><br>
+                        <input type="radio" class="form-check-input mt-3 ms-2" id="yes" name="dob">
+                        <label for="yes" class="form-check-label">Yes</label>
+                        <input type="radio" class="form-check-input mt-3 ms-4" id="no" name="dob">
+                        <label for="no" class="form-check-label">No</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="dob_bs" class="form-label required">Date of Birth (B.S.)</label>
+                        <input type="date" class="form-control" id="dob_bs" name="dob_bs">
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="birth_place" class="form-label required">Birthplace</label>
+                        <select class="form-control" id="birth_place" name="birth_place">
+                            <option value="" selected disabled>Select District</option>
+                            <option value="Achham">Achham</option>
+                            <option value="Arghakhanchi">Arghakhanchi</option>
+                            <option value="Baglung">Baglung</option>
+                            <option value="Baitadi">Baitadi</option>
+                            <option value="Bajhang">Bajhang</option>
+                            <option value="Bajura">Bajura</option>
+                            <option value="Banke">Banke</option>
+                            <option value="Bara">Bara</option>
+                            <option value="Bardiya">Bardiya</option>
+                            <option value="Bhaktapur">Bhaktapur</option>
+                            <option value="Bhojpur">Bhojpur</option>
+                            <option value="Chitwan">Chitwan</option>
+                            <option value="Dadeldhura">Dadeldhura</option>
+                            <option value="Dailekh">Dailekh</option>
+                            <option value="Dang">Dang</option>
+                            <option value="Darchula">Darchula</option>
+                            <option value="Dhading">Dhading</option>
+                            <option value="Dhankuta">Dhankuta</option>
+                            <option value="Dhanusha">Dhanusha</option>
+                            <option value="Dolakha">Dolakha</option>
+                            <option value="Dolpa">Dolpa</option>
+                            <option value="Doti">Doti</option>
+                            <option value="Gorkha">Gorkha</option>
+                            <option value="Gulmi">Gulmi</option>
+                            <option value="Humla">Humla</option>
+                            <option value="Ilam">Ilam</option>
+                            <option value="Jajarkot">Jajarkot</option>
+                            <option value="Jhapa">Jhapa</option>
+                            <option value="Jumla">Jumla</option>
+                            <option value="Kailali">Kailali</option>
+                            <option value="Kalikot">Kalikot</option>
+                            <option value="Kanchanpur">Kanchanpur</option>
+                            <option value="Kapilvastu">Kapilvastu</option>
+                            <option value="Kaski">Kaski</option>
+                            <option value="Kathmandu">Kathmandu</option>
+                            <option value="Kavrepalanchok">Kavrepalanchok</option>
+                            <option value="Khotang">Khotang</option>
+                            <option value="Lalitpur">Lalitpur</option>
+                            <option value="Lamjung">Lamjung</option>
+                            <option value="Mahottari">Mahottari</option>
+                            <option value="Makwanpur">Makwanpur</option>
+                            <option value="Manang">Manang</option>
+                            <option value="Morang">Morang</option>
+                            <option value="Mugu">Mugu</option>
+                            <option value="Mustang">Mustang</option>
+                            <option value="Myagdi">Myagdi</option>
+                            <option value="Nawalparasi (Bardaghat Susta East)">Nawalparasi (Bardaghat Susta East)</option>
+                            <option value="Nawalparasi (Bardaghat Susta West)">Nawalparasi (Bardaghat Susta West)</option>
+                            <option value="Nuwakot">Nuwakot</option>
+                            <option value="Okhaldhunga">Okhaldhunga</option>
+                            <option value="Palpa">Palpa</option>
+                            <option value="Panchthar">Panchthar</option>
+                            <option value="Parbat">Parbat</option>
+                            <option value="Parsa">Parsa</option>
+                            <option value="Pyuthan">Pyuthan</option>
+                            <option value="Ramechhap">Ramechhap</option>
+                            <option value="Rasuwa">Rasuwa</option>
+                            <option value="Rautahat">Rautahat</option>
+                            <option value="Rolpa">Rolpa</option>
+                            <option value="Rukum East">Rukum East</option>
+                            <option value="Rukum West">Rukum West</option>
+                            <option value="Rupandehi">Rupandehi</option>
+                            <option value="Salyan">Salyan</option>
+                            <option value="Sankhuwasabha">Sankhuwasabha</option>
+                            <option value="Saptari">Saptari</option>
+                            <option value="Sarlahi">Sarlahi</option>
+                            <option value="Sindhuli">Sindhuli</option>
+                            <option value="Sindhupalchok">Sindhupalchok</option>
+                            <option value="Siraha">Siraha</option>
+                            <option value="Solukhumbu">Solukhumbu</option>
+                            <option value="Sunsari">Sunsari</option>
+                            <option value="Surkhet">Surkhet</option>
+                            <option value="Syangja">Syangja</option>
+                            <option value="Tanahun">Tanahun</option>
+                            <option value="Taplejung">Taplejung</option>
+                            <option value="Terhathum">Terhathum</option>
+                            <option value="Udayapur">Udayapur</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="country" class="form-label required">Birth Country</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="Nepal" value="Nepal" readonly>
+                    </div>                  
+                    <div class="col-md-4">
+                        <label for="nationality" class="form-label required">Nationality</label>
+                        <input type="text" class="form-control" id="nationality" name="nationality" placeholder="Nepalese" value="Nepalese" readonly>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="father_last_name" class="form-label required">Father's Last Name</label>
+                        <input type="text" class="form-control" id="father_last_name" name="father_last_name" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="father_first_name" class="form-label required">Father's First Name</label>
+                        <input type="text" class="form-control" id="father_first_name" name="father_first_name" readonly>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <label for="mother_last_name" class="form-label required">Mother's Last Name</label>
+                        <input type="text" class="form-control" id="mother_last_name" name="mother_last_name" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="mother_first_name" class="form-label required">Mother's First Name</label>
+                        <input type="text" class="form-control" id="mother_first_name" name="mother_first_name" readonly>
+                    </div>
+                </div>
+                
+                <!-- Contact Details -->
+                <div class="section-header">Contact Details</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="province" class="form-label required">Province</label>
+                        <select class="form-select" id="province" name="province" required>
+                            <option value="">Select Province</option>
+                            <option value="1">Koshi Province</option>
+                            <option value="2">Madhesh Province</option>
+                            <option value="3">Bagmati Province</option>
+                            <option value="4">Gandaki Province</option>
+                            <option value="5">Lumbini Province</option>
+                            <option value="6">Karnali Province</option>
+                            <option value="7">Sudurpashchim Province</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="district" class="form-label required">District</label>
+                        <select class="form-select" id="district" name="district" required>
+                            <option value="">Select District</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Address Details -->
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="municipality" class="form-label required">Municipality</label>
+                        <input type="text" class="form-control" id="municipality" name="municipality" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="ward" class="form-label required">Ward No.</label>
+                        <input type="number" class="form-control" id="ward" name="ward" min="1" max="35" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="tole" class="form-label">Street/Tole</label>
+                        <input type="text" class="form-control" id="tole" name="tole">
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="mobile" class="form-label required">Mobile</label>
+                        <input type="text" class="form-control" id="mobile" name="mobile" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" >
+                    </div>
+                </div>
+                
+                <!-- Citizenship Details -->
+                <div class="section-header">Citizenship Details</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="citizenship_number" class="form-label required">Citizenship Number</label>
+                        <input type="text" class="form-control" id="citizenship_number" name="citizenship_number" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="citizenship_issue_date" class="form-label required">Issued Date</label>
+                        <input type="date" class="form-control" id="citizenship_issue_date" name="citizenship_issue_date" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="citizenship_issue_district" class="form-label required">Issued District</label>
+                        <select class="form-control" id="citizenship_issue_district" name="citizenship_issue_district">
+                            <option value="" selected disabled>Select District</option>
+                            <option value="Achham">Achham</option>
+                            <option value="Arghakhanchi">Arghakhanchi</option>
+                            <option value="Baglung">Baglung</option>
+                            <option value="Baitadi">Baitadi</option>
+                            <option value="Bajhang">Bajhang</option>
+                            <option value="Bajura">Bajura</option>
+                            <option value="Banke">Banke</option>
+                            <option value="Bara">Bara</option>
+                            <option value="Bardiya">Bardiya</option>
+                            <option value="Bhaktapur">Bhaktapur</option>
+                            <option value="Bhojpur">Bhojpur</option>
+                            <option value="Chitwan">Chitwan</option>
+                            <option value="Dadeldhura">Dadeldhura</option>
+                            <option value="Dailekh">Dailekh</option>
+                            <option value="Dang">Dang</option>
+                            <option value="Darchula">Darchula</option>
+                            <option value="Dhading">Dhading</option>
+                            <option value="Dhankuta">Dhankuta</option>
+                            <option value="Dhanusha">Dhanusha</option>
+                            <option value="Dolakha">Dolakha</option>
+                            <option value="Dolpa">Dolpa</option>
+                            <option value="Doti">Doti</option>
+                            <option value="Gorkha">Gorkha</option>
+                            <option value="Gulmi">Gulmi</option>
+                            <option value="Humla">Humla</option>
+                            <option value="Ilam">Ilam</option>
+                            <option value="Jajarkot">Jajarkot</option>
+                            <option value="Jhapa">Jhapa</option>
+                            <option value="Jumla">Jumla</option>
+                            <option value="Kailali">Kailali</option>
+                            <option value="Kalikot">Kalikot</option>
+                            <option value="Kanchanpur">Kanchanpur</option>
+                            <option value="Kapilvastu">Kapilvastu</option>
+                            <option value="Kaski">Kaski</option>
+                            <option value="Kathmandu">Kathmandu</option>
+                            <option value="Kavrepalanchok">Kavrepalanchok</option>
+                            <option value="Khotang">Khotang</option>
+                            <option value="Lalitpur">Lalitpur</option>
+                            <option value="Lamjung">Lamjung</option>
+                            <option value="Mahottari">Mahottari</option>
+                            <option value="Makwanpur">Makwanpur</option>
+                            <option value="Manang">Manang</option>
+                            <option value="Morang">Morang</option>
+                            <option value="Mugu">Mugu</option>
+                            <option value="Mustang">Mustang</option>
+                            <option value="Myagdi">Myagdi</option>
+                            <option value="Nawalparasi (Bardaghat Susta East)">Nawalparasi (Bardaghat Susta East)</option>
+                            <option value="Nawalparasi (Bardaghat Susta West)">Nawalparasi (Bardaghat Susta West)</option>
+                            <option value="Nuwakot">Nuwakot</option>
+                            <option value="Okhaldhunga">Okhaldhunga</option>
+                            <option value="Palpa">Palpa</option>
+                            <option value="Panchthar">Panchthar</option>
+                            <option value="Parbat">Parbat</option>
+                            <option value="Parsa">Parsa</option>
+                            <option value="Pyuthan">Pyuthan</option>
+                            <option value="Ramechhap">Ramechhap</option>
+                            <option value="Rasuwa">Rasuwa</option>
+                            <option value="Rautahat">Rautahat</option>
+                            <option value="Rolpa">Rolpa</option>
+                            <option value="Rukum East">Rukum East</option>
+                            <option value="Rukum West">Rukum West</option>
+                            <option value="Rupandehi">Rupandehi</option>
+                            <option value="Salyan">Salyan</option>
+                            <option value="Sankhuwasabha">Sankhuwasabha</option>
+                            <option value="Saptari">Saptari</option>
+                            <option value="Sarlahi">Sarlahi</option>
+                            <option value="Sindhuli">Sindhuli</option>
+                            <option value="Sindhupalchok">Sindhupalchok</option>
+                            <option value="Siraha">Siraha</option>
+                            <option value="Solukhumbu">Solukhumbu</option>
+                            <option value="Sunsari">Sunsari</option>
+                            <option value="Surkhet">Surkhet</option>
+                            <option value="Syangja">Syangja</option>
+                            <option value="Tanahun">Tanahun</option>
+                            <option value="Taplejung">Taplejung</option>
+                            <option value="Terhathum">Terhathum</option>
+                            <option value="Udayapur">Udayapur</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="citizenship_photo" class="form-label required">Citizenship Document</label>
+                        <div class="file-upload">
+                            <input type="file" class="form-control" id="citizenship_photo" name="citizenship_photo" 
+                            accept="image/*,.pdf" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Passport Details -->
+                <div class="section-header">Passport Details</div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="passport_type" class="form-label required">Passport Type</label>
+                        <select class="form-select" id="passport_type" name="passport_type" required>
+                            <option value="">Select Type</option>
+                            <option value="Ordinary">Ordinary</option>
+                            <option value="Service">Service</option>
+                            <option value="Diplomatic">Diplomatic</option>
+                            <option value="Official">Official</option>
+                            <option value="Temporary">Temporary</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="pages" class="form-label required">Number of Pages</label>
+                        <select class="form-select" id="pages" name="pages" required>
+                            <option value="">Select Pages</option>
+                            <option value="34">34 Pages</option>
+                            <option value="66">66 Pages</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="location" class="form-label required">Location</label>
+                        <select class="form-select" id="location" name="location" required>
+                            <option value="">Select Location</option>
+                            <option value="DAO Kathmandu">DAO Kathmandu</option>
+                            <option value="Passport Department">Department Of Passports</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-4">
+                        <label for="passport_issue_date" class="form-label required">Issued Date (A.D) - For Existing Passport</label>
+                        <input type="date" class="form-control" id="passport_issue_date" name="passport_issue_date" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="passport_expired_date" class="form-label required">Expiry Date (A.D) - For Existing Passport</label>
+                        <input type="date" class="form-control" id="passport_expired_date" name="passport_expired_date" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="passport_issue_district" class="form-label required">Issued District - For Existing Passport</label>
+                        <select class="form-control" id="passport_issue_district" name="passport_issue_district">
+                            <option value="" selected disabled>Select District</option>
+                            <option value="Achham">Achham</option>
+                            <option value="Arghakhanchi">Arghakhanchi</option>
+                            <option value="Baglung">Baglung</option>
+                            <option value="Baitadi">Baitadi</option>
+                            <option value="Bajhang">Bajhang</option>
+                            <option value="Bajura">Bajura</option>
+                            <option value="Banke">Banke</option>
+                            <option value="Bara">Bara</option>
+                            <option value="Bardiya">Bardiya</option>
+                            <option value="Bhaktapur">Bhaktapur</option>
+                            <option value="Bhojpur">Bhojpur</option>
+                            <option value="Chitwan">Chitwan</option>
+                            <option value="Dadeldhura">Dadeldhura</option>
+                            <option value="Dailekh">Dailekh</option>
+                            <option value="Dang">Dang</option>
+                            <option value="Darchula">Darchula</option>
+                            <option value="Dhading">Dhading</option>
+                            <option value="Dhankuta">Dhankuta</option>
+                            <option value="Dhanusha">Dhanusha</option>
+                            <option value="Dolakha">Dolakha</option>
+                            <option value="Dolpa">Dolpa</option>
+                            <option value="Doti">Doti</option>
+                            <option value="Gorkha">Gorkha</option>
+                            <option value="Gulmi">Gulmi</option>
+                            <option value="Humla">Humla</option>
+                            <option value="Ilam">Ilam</option>
+                            <option value="Jajarkot">Jajarkot</option>
+                            <option value="Jhapa">Jhapa</option>
+                            <option value="Jumla">Jumla</option>
+                            <option value="Kailali">Kailali</option>
+                            <option value="Kalikot">Kalikot</option>
+                            <option value="Kanchanpur">Kanchanpur</option>
+                            <option value="Kapilvastu">Kapilvastu</option>
+                            <option value="Kaski">Kaski</option>
+                            <option value="Kathmandu">Kathmandu</option>
+                            <option value="Kavrepalanchok">Kavrepalanchok</option>
+                            <option value="Khotang">Khotang</option>
+                            <option value="Lalitpur">Lalitpur</option>
+                            <option value="Lamjung">Lamjung</option>
+                            <option value="Mahottari">Mahottari</option>
+                            <option value="Makwanpur">Makwanpur</option>
+                            <option value="Manang">Manang</option>
+                            <option value="Morang">Morang</option>
+                            <option value="Mugu">Mugu</option>
+                            <option value="Mustang">Mustang</option>
+                            <option value="Myagdi">Myagdi</option>
+                            <option value="Nawalparasi (Bardaghat Susta East)">Nawalparasi (Bardaghat Susta East)</option>
+                            <option value="Nawalparasi (Bardaghat Susta West)">Nawalparasi (Bardaghat Susta West)</option>
+                            <option value="Nuwakot">Nuwakot</option>
+                            <option value="Okhaldhunga">Okhaldhunga</option>
+                            <option value="Palpa">Palpa</option>
+                            <option value="Panchthar">Panchthar</option>
+                            <option value="Parbat">Parbat</option>
+                            <option value="Parsa">Parsa</option>
+                            <option value="Pyuthan">Pyuthan</option>
+                            <option value="Ramechhap">Ramechhap</option>
+                            <option value="Rasuwa">Rasuwa</option>
+                            <option value="Rautahat">Rautahat</option>
+                            <option value="Rolpa">Rolpa</option>
+                            <option value="Rukum East">Rukum East</option>
+                            <option value="Rukum West">Rukum West</option>
+                            <option value="Rupandehi">Rupandehi</option>
+                            <option value="Salyan">Salyan</option>
+                            <option value="Sankhuwasabha">Sankhuwasabha</option>
+                            <option value="Saptari">Saptari</option>
+                            <option value="Sarlahi">Sarlahi</option>
+                            <option value="Sindhuli">Sindhuli</option>
+                            <option value="Sindhupalchok">Sindhupalchok</option>
+                            <option value="Siraha">Siraha</option>
+                            <option value="Solukhumbu">Solukhumbu</option>
+                            <option value="Sunsari">Sunsari</option>
+                            <option value="Surkhet">Surkhet</option>
+                            <option value="Syangja">Syangja</option>
+                            <option value="Tanahun">Tanahun</option>
+                            <option value="Taplejung">Taplejung</option>
+                            <option value="Terhathum">Terhathum</option>
+                            <option value="Udayapur">Udayapur</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mt-5">
+                        <button type="submit" class="btn btn-primary btn-lg py-3">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="renewal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</body>
+</html>
